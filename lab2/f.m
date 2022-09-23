@@ -1,3 +1,3 @@
 function y = f(x)
 
-  y = -x.^2 + 1;
+  y = 4*sin(x)*exp(-x^2)-1;

@@ -10,6 +10,7 @@ function r=interpolate(X,Y,x0)
     for j=i:n
       if i == j
         continue;
+      endif
         p(i,j) = ((x0-X(j))*p(i,j-1) - (x0-X(i))*p(i+1,j))/(X(i)-X(j));
     endfor
   endfor

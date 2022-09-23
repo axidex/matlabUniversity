@@ -20,5 +20,5 @@ function aprx = bisec(l, imax)
   if abs(cp-c)/max(abs(cp),abs(c)) <= eps
     break;
   endif
-  endfor
-c
+endfor
+c;

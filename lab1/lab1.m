@@ -2,7 +2,7 @@ function lab1(x,n)
 format long e;
 res = 0;
 errors = zeros(n,1);
-etheor = exp(x);
+etheor = 1/(1+x)^2;
 errorsr = zeros(n,1);
 
 for i = 1:n
@@ -22,5 +22,5 @@ figure (2)
 plot (1:n, log10(abs(errors)), 1:n, log10(abs(errorsr)))
 grid on
 
-errors
-errorsr
+errors;
+errorsr;
