@@ -1,4 +1,14 @@
 function lab31(L,n)
+  N = 250;
+
+  X = linear_grid(L, N);
+Y = zeros(N,1);
+
+for i=1:N
+  Y(i) =f(X(i));
+endfor;
+
+
 XT = T_grid(L, n);
 YT = zeros(n,1);
 
