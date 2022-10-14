@@ -1,3 +1,6 @@
-function res = f(x,y )
+function res = f(x,y)
 
-  res = e^(-x) - y;
+  y1 = y(1);
+  y2 = y(2);
+  res(1) = y2;
+  res(2) = exp(-x) - y1;
