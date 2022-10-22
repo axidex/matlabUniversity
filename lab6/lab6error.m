@@ -1,5 +1,5 @@
 function lab6error()
-n = 50;
+n = 100;
 h1 = 0.001;
 h2 = 0.01;
 h3 = 0.1;

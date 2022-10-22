@@ -2,7 +2,7 @@ function res=lab6(h)
 const0Y = -1;
 const1Y = 1;
 
-n = 50/h;
+n = 100/h;
 X = zeros(1,n);
 Y1 = zeros(1,n);
 Y2 = zeros(1,n);
