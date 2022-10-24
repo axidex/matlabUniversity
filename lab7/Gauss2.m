@@ -1,46 +1,43 @@
-# A=[1,2,3,4,5;10,9,8,7,6;5,9,11,12,13;20,1,3,17,14;12,10,4,16,15]
-# b=[10;20;30;40;50]
-#x =
+function X = Gauss2(A,B)
 
-#0.0964
+M=[A,B]; %Concatenate matrix and column vector
+[nr,nc]=size(M);%Extract size of rows and columns from M matrix
 
-#1.4324
+for r=1:nr %Create main loop
+    %Partial Pivoting
+    scale = M(r,r);
+    max = abs(scale);
+    maxr = r; %Assign position of pivot to maxr
 
-#-1.3530
+    % Ищем строку с максимальным значением столбца и отслеживаем индекс строки
+    for mr = r:nr
+        scale3 = M(mr,r);
+        if max < abs(scale3)
+            max = abs(scale3);
+            maxr = mr;   %Keep track of the row index
+        end
+    end
 
-#1.6593
+    % делаем свап r и maxr
+    temp_A2 = M(r,:);
+    M(r,:) = M(maxr,:);
+    M(maxr,:) = temp_A2;
 
-#0.8921
+% скейлим относительно главной точки
+scale2 = M(r,r);
+    for c= r:nc
+        M(r,c)=M(r,c)./scale2;
+    end
 
-# A*x - проверка
-function z=Gauss2(A,b)
-  z = A;
-  z
-  A2 = zeros(length(z),length(z(1,:)));
-  flag = length(z);
-  while length(z) != 1
-  [x1, ix1] = max(z);
-  [x2, ix2] = max(x1);
-  col = ix2;
-  row = ix1(ix2);
-  for
-  A2(flag,:) =z(row,:);
-  M = zeros(1, length(z));
-  A_new = zeros(length(z),length(z(1,:)));
-    for i=1:length(z)
-      if i == row
-        continue
-      endif
-      M(i) = -z(i,col)/z(row,col);
-    endfor
-
-   for i=1:length(z)
-        A_new(i,:) = M(i)*z(row ,:);
-   endfor
-  A_new(row,:) = [];
-  A_new(:,col) = [];
-  z = A_new;
-  z
-  flag-=1;
-endwhile
-A2
+% уменьшаем строки относительно главной
+    for rr=1:nr
+        if (rr~=r)
+            scale4 = M(rr,r);
+            for c = r:nc
+                M(rr,c)=M(rr,c)-scale4*M(r,c);
+            end
+        end
+    end
+end
+X = M(:,nc); %Extract solution from last column of M matrix
+end
