@@ -14,7 +14,7 @@ b = A * Goal_Result;
 %our two parameters are passed through both functions, and their results
 %are assigned to variables x and y
 Naive_Result = Gauss(A,b);
-Pivoted_Result = Gauss3(A,b);
+Pivoted_Result = Gauss2(A,b);
 
 %our r and norm values are calculated for both function results
 r_Naive = (A * transpose(Naive_Result)) - b;

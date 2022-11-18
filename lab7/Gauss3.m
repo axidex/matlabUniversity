@@ -1,6 +1,6 @@
 function X = Gauss3(A,b)
 
-size = length(A)
+size = length(A);
 M = A;
 
 Q = [];
@@ -12,8 +12,8 @@ for i=1:size
 endfor
 colchangenew = [];
 for i=1:size
-  M
-  b
+  M;
+  b;
   sizeM = length(M);
 
   [x1, ix1] = max(M);
@@ -37,8 +37,8 @@ for i=1:size
   colchanges(1) = colchanges(col);
   colchanges(col) = temp_A2;
 
-  M
-  b
+  M;
+  b;
 # coefs
   coef = zeros(1,sizeM);
   for j=1:sizeM ##### test
@@ -59,7 +59,7 @@ for i=1:size
 
 endfor
 Q;
-bnew
+bnew;
 Matrix = zeros(size,size);
 counter = 1;
 for i=1:size
@@ -68,8 +68,8 @@ for i=1:size
     counter += 1;
   endfor
 endfor
-Matrix
-X = linsolve(Matrix, transpose(bnew))
+Matrix;
+X = linsolve(Matrix, transpose(bnew));
 colchangenew;
 xLast = [];
 for i=1:size
