@@ -1,4 +1,7 @@
-function X = Gauss3(A,b)
+function res = Gauss3(A,b)
+
+qwe = A;
+zxc = b;
 
 size = length(A);
 M = A;
@@ -41,6 +44,7 @@ for i=1:size
   b;
 # coefs
   coef = zeros(1,sizeM);
+  res = linsolve(qwe,zxc);
   for j=1:sizeM ##### test
     coef(j) = -M(j,1)/M(1,1);
   endfor
@@ -76,4 +80,5 @@ for i=1:size
   XLast(colchangenew(i)) = X(i);
 endfor;
 X = transpose(XLast);
+
 
