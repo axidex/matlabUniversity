@@ -22,9 +22,13 @@ r_Naive = (A * Naive_Result) - b;
 r_Pivoted = (A * Pivoted_Result) - b;
 r_Complete = (A * Complete_Result) - b;
 
-norm_Naive = norm(r_Naive)
-norm_Pivoted = norm(r_Pivoted)
-norm_Complete = norm(r_Complete)
+r_Naive = abs(r_Naive)
+r_Pivoted = abs(r_Pivoted)
+r_Complete = abs(r_Complete)
+
+norm_Naive = norm(r_Naive, 1)
+norm_Pivoted = norm(r_Pivoted, 1)
+norm_Complete = norm(r_Complete, 1)
 
 %The most accurate method is output to the user
 %(Partially Povoted gaussian elimination is more accurate)
